@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules/
 
 # testing
 /coverage
@@ -15,6 +16,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+voting.log
+uncaughtExceptions.log
 
 npm-debug.log*
 yarn-debug.log*

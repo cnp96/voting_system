@@ -1,0 +1,7 @@
+{
+  "db": {
+    "host": "mongodb://@ds211592.mlab.com:11592/voting",
+    "user": "test",
+    "password": "password1" 
+  }
+}

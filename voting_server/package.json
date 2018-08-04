@@ -1,0 +1,43 @@
+{
+  "name": "voting_system",
+  "version": "1.0.0",
+  "description": "A voting system built with express and react",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chinmayapati/voting_system.git"
+  },
+  "keywords": [
+    "voting",
+    "express",
+    "react",
+    "node"
+  ],
+  "author": "Chinmaya Pati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chinmayapati/voting_system/issues"
+  },
+  "homepage": "https://github.com/chinmayapati/voting_system#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "config": "^1.30.0",
+    "cors": "^2.8.4",
+    "date-diff": "^0.2.0",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "fawn": "^2.1.5",
+    "helmet": "^3.12.1",
+    "joi": "^13.4.0",
+    "joi-objectid": "^2.0.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.2.1",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5",
+    "winston": "^2.1.0"
+  }
+}
