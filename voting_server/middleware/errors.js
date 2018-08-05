@@ -9,7 +9,7 @@ module.exports = function (err, req, res, next) {
     // Log to console
     debug("Error Occurred:", err.message);
     
-    if(err.code == 11000) return res.status(400).send("Duplicate entry");
+    if(err.code == 11000) return res.status(400).send(err.customMsg || "Duplicate entry");
     
     res.status(500).send("Something went wrong. Please try after sometime.");
 }

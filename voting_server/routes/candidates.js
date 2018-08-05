@@ -31,15 +31,22 @@ router.put("/vote/:id", auth, (req, res, next) => {
   const {error} = validateVote({user: req.user._id, candidate: req.params.id});
   if(error) return res.status(400).send("No such candidate");
   
-  // Add record in Votes, update vote count in candidates, voted status in users
-  Fawn.Task()
-  .save(Votes, {user: req.user._id, candidate: req.params.id})
-  .update(Candidates, {_id: req.params.id}, {$inc: {"votes": 1}})
-  .update(Users, {_id: req.user._id}, {$set: {voted: true} })
-  .run({useMongoose: true})
-  .then(r => res.send(r[0]) )
-  .catch(e => next(e));
-
+  // Check if user has already voted
+  Votes.findById(req.user._id)
+  .then( r => {
+    if(!r) {
+      // Add record in Votes, update vote count in candidates, voted status in users
+      Fawn.Task()
+      .save(Votes, {user: req.user._id, candidate: req.params.id})
+      .update(Candidates, {_id: req.params.id}, {$inc: {"votes": 1}})
+      .update(Users, {_id: req.user._id}, {voted: true} )
+      .run({useMongoose: true})
+      .then(r => { res.send(r[0]); })
+      .catch(e => { e.customMsg="You have already voted"; next(e);});
+    }
+    else throw new Error("You have already voted.");
+  })
+  .catch(e => {e.customMsg="You have already voted"; next(e);} )
 });
 
 // add a new candidate

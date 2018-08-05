@@ -93,7 +93,7 @@ class App extends Component {
       console.log("Fetched candidates ", r.data);
       this.setState({candidates: r.data, isLoading: false});
     })
-    .catch(e => this.errorHandler(e));
+    .catch(e => {/*this.errorHandler(e)*/ console.log("Error fetching candidates.");});
   }
 
   // Get vote info
