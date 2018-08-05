@@ -15,6 +15,7 @@ A Simple CRUD application created on MERN stack.
 ## Installation
 - `git clone https://github.com/chinmayapati/voting_system.git`
 - `cd voting_system/voting_server`
+- Refer to [nvm installtion guide](https://nodesource.com/blog/installing-node-js-tutorial-using-nvm-on-mac-os-x-and-ubuntu/) for **Node Version Manager** installation
 - `nvm use 10.6.0` (If **nvm** is not isntalled, set node version value to **10.6.0** manually)
 - `npm install` (Install node app dependencies)
 - `cd ../ && npm install` (Install react app dependencies)
