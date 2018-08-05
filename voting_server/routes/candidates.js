@@ -35,7 +35,7 @@ router.put("/vote/:id", auth, (req, res, next) => {
   Fawn.Task()
   .save(Votes, {user: req.user._id, candidate: req.params.id})
   .update(Candidates, {_id: req.params.id}, {$inc: {"votes": 1}})
-  .update(Users, {_id: req.user._id}, {$set: {hasVoted: true} })
+  .update(Users, {_id: req.user._id}, {$set: {voted: true} })
   .run({useMongoose: true})
   .then(r => res.send(r[0]) )
   .catch(e => next(e));
