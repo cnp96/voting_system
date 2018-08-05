@@ -53,7 +53,7 @@ class App extends Component {
     axios.put("http://localhost:3001/candidates/vote/"+candidate, {}, {headers: {"x-auth-token": cookie.load("auth")}})
     .then(r => {
       if(r.status === 200 && r.data.candidate) {
-        this.setState({votedFor: candidate});
+        this.setState({votedFor: r.data.candidate});
       }
     })
     .catch(e => this.errorHandler(e));
