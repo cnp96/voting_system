@@ -13,7 +13,7 @@ class Navbar extends Component {
     else {
       action = <div>
                 <button className="btn btn-default" style={{float: "right"}}>Login</button>
-                <button className="btn btn-default mr-1" style={{float: "right"}}>Signup</button>
+                {/* <button className="btn btn-default mr-1" style={{float: "right"}}>Signup</button> */}
               </div>;
     }
 

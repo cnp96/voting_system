@@ -13,10 +13,10 @@ A Simple CRUD application created on MERN stack.
 - **_Candidates data is auto refreshed when user is logged-in every 5 seconds._**
 
 ## Installation
-- `git clone https://github.com:chinmayapati/voting_system.git`
+- `git clone https://github.com/chinmayapati/voting_system.git`
 - `cd voting_system/voting_server`
-- `npm install` (Install node app dependencies)
 - `nvm use 10.6.0` (If **nvm** is not isntalled, set node version value to **10.6.0** manually)
+- `npm install` (Install node app dependencies)
 - `cd ../ && npm install` (Install react app dependencies)
 
 ## Run
